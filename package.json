@@ -1,0 +1,16 @@
+{
+  "name": "chatbro",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "setup": "npm install && npm --prefix server install && npm --prefix client install && node scripts/make-env.mjs",
+    "init-env": "node scripts/make-env.mjs",
+    "dev": "concurrently -n server,client -c magenta,blue \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "test": "npm --prefix client test && npm --prefix server test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
